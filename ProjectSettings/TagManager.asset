@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - PosCube
+  - Bomb
+  - GoldenTeapot
+  - Hand
+  - FxTemporaire
+  - Table
+  - LEFT POKE
+  - RIGHT POKE
+  - LEFT VISUAL
+  - RIGHT VISUAL
+  - GOLD LEFT HAND
+  - GOLD RIGHT HAND
+  - LEFT HAND BOX
+  - RIGHT HAND BOX
+  - RIGHT PALM
+  - LEFT PALM
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Green Cube
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
