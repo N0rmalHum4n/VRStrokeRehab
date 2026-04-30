@@ -2,8 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using System.Diagnostics.Contracts;
-using UnityEngine.Timeline;
+
 
 public class NewGameManager : MonoBehaviour
 {
@@ -21,7 +20,7 @@ public class NewGameManager : MonoBehaviour
     [SerializeField] private GameObject quitIcon;
     [SerializeField] private Transform leftMiddleMetacarpalTip;
     [SerializeField] private Transform rightMiddleMetacarpalTip;
-    
+    [SerializeField] private GameObject quitCanvas;
 
     [Header("UI")]
     public TextMeshProUGUI scoreText;
@@ -172,9 +171,7 @@ public class NewGameManager : MonoBehaviour
         for (int i = 0; i < fruits.Length; i++)
         {
             Destroy(fruits[i].gameObject);
-        }
-
-        
+        }        
 
         gameActive = false;
                     
@@ -183,11 +180,14 @@ public class NewGameManager : MonoBehaviour
         StartCoroutine(ShowReturnButtons());
     }
 
-    private IEnumerator ShowReturnButtons() {
-        yield return new WaitForSeconds(3f);        
+    private IEnumerator ShowReturnButtons()
+    {
+        yield return new WaitForSeconds(1.5f);
+        quitCanvas.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
         Instantiate(quitIcon, leftMiddleMetacarpalTip.position + new Vector3(0f, 0.04f, 0.06f), Quaternion.Euler(0f, 0f, 45f));
         Instantiate(quitIcon, rightMiddleMetacarpalTip.position + new Vector3(0f, 0.04f, 0.06f), Quaternion.Euler(0f, 0f, 45f));
-        if (quitText) quitText.text = "Press one of the X icons to exit to the Main Menu!";
+        if (quitText) quitText.text = "Press one of the X icons to exit to the Main Menu!";                                                                                                                                                                                               
     }
 
 }

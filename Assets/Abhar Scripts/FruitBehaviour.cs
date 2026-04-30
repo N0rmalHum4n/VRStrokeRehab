@@ -45,7 +45,7 @@ public class FruitBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("APPLETRIGGER: hit " + other.gameObject.name);
+        // Debug.Log("APPLETRIGGER: hit " + other.gameObject.name);
         if (isDone) return;
         isDone = true;
         if (other.gameObject.tag == "Table")

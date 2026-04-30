@@ -12,28 +12,18 @@ public class FruitSpawner : MonoBehaviour
     [SerializeField] float tablePadding;
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip spawnSound;
-    // hand collider positions
-    //[SerializeField] Transform leftPokeInteractor;
-    //[SerializeField] Transform rightPokeInteractor;
+   
 
     [SerializeField] Transform leftMiddleMetacarpalTip;
     [SerializeField] Transform rightMiddleMetacarpalTip;
 
-    //[SerializeField] Transform leftIndexTip;
-    //[SerializeField] Transform rightIndexTip;
-
-    //[SerializeField] Transform leftMiddleMetacarpal;
-    //[SerializeField] Transform rightMiddleMetacarpal;
+    
 
     [SerializeField] GameObject fruitPrefab;
     [SerializeField] float spawnIntervalMin;
     [SerializeField] float spawnIntervalMax;
     [SerializeField] float offsetDistanceMin;
     [SerializeField] float offsetDistanceMax;
-    //[SerializeField] float minOffsetDistanceFloor;
-    //[SerializeField] float despawnTimerMin;
-    //[SerializeField] float despawnTimerMax;
-    //[SerializeField] float despawnDifficultyThreshold;
     [SerializeField] int maxLevel;
 
     [SerializeField] GameObject tableMarkerPrefab;
@@ -45,11 +35,6 @@ public class FruitSpawner : MonoBehaviour
     private bool isSpawning;
     private bool timedMode = false;
 
-    //void Start()
-    //{
-    //    StartSpawning();
-    //    RequestRespawn();
-    //}
 
     IEnumerator DelayedFirstSpawn()
     {
@@ -157,24 +142,7 @@ public class FruitSpawner : MonoBehaviour
         handCenter = new Vector3(avgXValue, yValue, avgZValue);
     }
 
-    //private Vector3 GetSpawnPosition()
-    //{
-    //    var randomPosition = Random.insideUnitCircle; // get random position in a circle with radius 1.0
-    //    float currentMinOffset = Mathf.Lerp(offsetDistanceMin, minOffsetDistanceFloor, currentDifficulty);
-    //    float offsetDistance = Mathf.Lerp(currentMinOffset, offsetDistanceMax, currentDifficulty);
-
-    //    float averageIndexZ = (leftIndexTip.position.z + rightIndexTip.position.z) / 2f;
-
-    //    // find random, but valid spawn position offsets from hand colliders
-    //    float xOffset = handCenter.x + randomPosition.x * offsetDistance;
-    //    float zOffset = handCenter.z + randomPosition.y * offsetDistance;
-    //    // clamp the offsets to be within the spawn area
-    //    float xBounded = Mathf.Clamp(xOffset, tableTransform.position.x - spawnAreaSize.x / 2, tableTransform.position.x + spawnAreaSize.x / 2);
-    //    float zBounded = Mathf.Clamp(zOffset, tableTransform.position.z - spawnAreaSize.y / 2, tableTransform.position.z + spawnAreaSize.y / 2);
-    //    Vector3 spawnPosition = new Vector3(xBounded, handCenter.y, zBounded);
-    //    return spawnPosition;
-    //}
-
+    
     private Vector3 NewSpawnPosition()
     {
         float outerRadius = Mathf.Lerp(offsetDistanceMin, offsetDistanceMax, currentDifficulty);

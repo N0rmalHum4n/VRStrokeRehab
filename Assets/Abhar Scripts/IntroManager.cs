@@ -10,7 +10,7 @@ public class IntroManager : MonoBehaviour
     [SerializeField] private Transform rightMiddleMetacarpalTip;
     [SerializeField] private Transform virtualTable;
     [SerializeField] private GameObject introCanvas;
-    [SerializeField] private GameObject gameCanvas;
+    //[SerializeField] private GameObject gameCanvas;
     [SerializeField] private float spawnDelay;
     [SerializeField] private float yOffset;
     [SerializeField] private float zOffset;
@@ -23,7 +23,7 @@ public class IntroManager : MonoBehaviour
     void Start()
     {
         introCanvas.SetActive(true);
-        gameCanvas.SetActive(false);
+        //gameCanvas.SetActive(false);
         StartCoroutine(SpawnAfterDelay());
     }
 
@@ -38,13 +38,13 @@ public class IntroManager : MonoBehaviour
         float avgX = (leftMiddleMetacarpalTip.position.x + rightMiddleMetacarpalTip.position.x) / 2f;
         float avgY = (leftMiddleMetacarpalTip.position.y + rightMiddleMetacarpalTip.position.y) / 2f + yOffset;
         float avgZ = (leftMiddleMetacarpalTip.position.z + rightMiddleMetacarpalTip.position.z) / 2f + zOffset;
-        Instantiate(dummyPrefab, new Vector3(avgX, avgY + yOffset, avgZ), Quaternion.identity);
+        Instantiate(dummyPrefab, new Vector3(avgX, avgY, avgZ), Quaternion.identity);
     }
 
     public void OnDummyHit()
     {
         introCanvas.SetActive(false);
-        gameCanvas.SetActive(true);
+        //gameCanvas.SetActive(true);
         NewGameManager.Instance.StartGame();
     }
 }

@@ -27,13 +27,7 @@ public class GameStart : MonoBehaviour
         //Debug.Log("GAMESTART: XR Origin Original Z Value: " + originalZValue);
         StartCoroutine(CalibrateAfterDelay());
     }
-    //private IEnumerator FaceRightWay() {
-    //    yield return new WaitForSeconds(3f);
-    //    Debug.Log("STARTERDEBUG: XR ORIGIN ROTATION IS: " + xROrigin.rotation);
-    //    xROrigin.rotation = Quaternion.Euler(0f, 180f, 0f);
-    //    Debug.Log("STARTERDEBUG: NEW ROTATION IS: " + xROrigin.rotation);
-    //    yield break;
-    //}
+   
     private IEnumerator CalibrateAfterDelay()
     {
         yield return new WaitForSeconds(3f);
